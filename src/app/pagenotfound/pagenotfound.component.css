@@ -1,0 +1,20 @@
+.text-size{
+    font-size: 10vw;
+    padding: 0px;
+}
+.text-size1{
+    font-size: 5vw;
+}
+.adjustbackbutton{
+    float: right;
+    font-size: 2vw;
+    color: black;
+    transition: font-size 5s;
+}
+.adjustbackbutton:hover{
+    font-size: 3vw;
+}
+.clearclass{
+    clear: right;
+}
+.pointer {cursor: pointer;}

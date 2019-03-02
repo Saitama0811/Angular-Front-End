@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light" >
+
+    <a class="navbar-brand" href="#">
+            <h1 style="color:#000; margin-left: 30px;">goHarness</h1>
+        </a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav ml-auto">
+
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold" routerLink="/login">Home</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold" routerLink="/signup" >Register</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link  navhover font-weight-bold" routerLink="/user-panel">User Panel</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold text-black" href="#contactus" >Contact Us</a>
+        </li>
+</ul>
+</div>
+</nav>
+
+<p class="text-center"><a (click)="onShowCar()" class="btn btn-primary form-control pos">Add New car</a></p>
+
+<div class="card formmargin" *ngIf="formStatus">
+  <form>
+    <h2 class="white-text">Add New Car</h2>
+    <br>
+    <input type="text" class="form-control" name="carimage" [(ngModel)]="imgurl" placeholder="Car Image Web URL" required><br>
+    <input type="text" class="form-control" name="carname" [(ngModel)]="carname" placeholder="Car Name" #carnm="ngModel" minlength="3" required><br>
+    <input type="text" class="form-control" name="price" [(ngModel)]="price" placeholder="Price" #carprice="ngModel" minlength="3" required> <br>
+    <input type="text" class="form-control" name="cartype" [(ngModel)]="cartype" placeholder="Car Type" #type="ngModel" minlength="3" required> <br>
+    <textarea class="form-control" name="description" [(ngModel)]="description" placeholder="Type Car Description" #desc="ngModel" rows="3" minlength="20" maxlength="80" required></textarea> <br>
+    <a class="btn btn-primary form-control" (click)="onAddCar()">Submit</a> <br>
+  </form>
+</div>
+<br>
+
+<div class="card formmargin" *ngIf="formUpdateStatus">
+  <form>
+    <h2 class="white-text">Update Car Info</h2>
+    <br>
+    <input type="text" class="form-control" name="carimage" [(ngModel)]="imgurl" placeholder="Car Image Web URL" required> <br>
+    <input type="text" class="form-control" name="carname" [(ngModel)]="upcarname" placeholder="Car Name" #carnm="ngModel" minlength="3" required><br>
+    <input type="text" class="form-control" name="price" [(ngModel)]="upprice" placeholder="Price" #carprice="ngModel" minlength="3" required> <br>
+    <input type="text" class="form-control" name="cartype" [(ngModel)]="upcartype" placeholder="Car Type" #type="ngModel" minlength="3" required> <br>
+    <textarea class="form-control" name="description" [(ngModel)]="updescription" placeholder="Type Car Description" #desc="ngModel" rows="3" minlength="20" maxlength="80" required></textarea> <br>
+    <a class="btn btn-primary form-control" (click)="onCarUpdate()">Update</a> <br>
+  </form>
+</div>
+
+<br>
+
+
+<div class="container-fluid" style="clear:both;">
+<div id="{{i.CarId}}" *ngFor="let i of this.cardata.car" class="card car-card">
+  <div class="row">
+  <div class="col-md-3">
+    <img src='{{ i.image }}' alt="Car Image">
+  </div>
+  <div class="col-md-5">
+    <h3 class="white-text">{{ i.name }}</h3><br>
+    <p class="white-text">{{ i.type }}</p>
+    <h4 class="white-text">₹ {{ i.price }} /hour</h4>
+    <p class="white-text wrap-text">{{ i.cardesc }}</p>
+  </div>
+  <div class="col-md-4">
+    <br>
+    <a (click)="onShowUpdate(i.CarId)" class="btn btn-primary form-control white-text">Update</a>
+    <br><br><br>
+    <a (click)="onCarDelete(i.CarId)" class="btn btn-warning form-control white-text">Delete</a>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>

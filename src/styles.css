@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    background-image: url("src/assets/map.png");
+    background-size: 50%;
+    transition: background-size 20s;
+}
+body:hover{
+    background-size: 80%;
+}

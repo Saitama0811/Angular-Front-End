@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light" >
+
+    <a class="navbar-brand" href="#">
+            <h1 style="color:#000; margin-left: 30px;">goHarness</h1>
+        </a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav ml-auto">
+
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold" routerLink="/login">Home</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold" routerLink="/signup" >Register</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link  navhover font-weight-bold" href="#">FAQ</a>
+        </li>
+        <li class="nav-item li1">
+            <a class="nav-link navhover font-weight-bold text-black" href="#contactus" >Contact Us</a>
+        </li>
+</ul>
+</div>
+</nav>
+
+
+
+
+<div class="container-fluid row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+  <div class="card">
+    <br>
+    <h1 class="white-text">Sign Up</h1>
+    <form>
+      <br>
+      <div class="row">
+        <div class="col">
+          <input class="form-control" type="text" name="fname" placeholder="First Name" [(ngModel)]="fname" #firstname="ngModel" minlength="4" pattern="[a-z]*[A-Z]*" required>
+        </div>
+        <div class="col">
+            <input class="form-control" type="text" name="lname" placeholder="Last Name" [(ngModel)]="lname" #lastname="ngModel" minlength="4" pattern="[a-z]*[A-Z]*" required>
+        </div>
+      </div>
+      <br>
+      <input class="form-control" type="email" name="email" placeholder="Email Address" [(ngModel)]="email" #emailaddress="ngModel" pattern="[A-Za-z0-9._]*[@][a-zA-Z0-9.]*[.][a-zA-Z.]*" required><br>
+      <input class="form-control" type="password" name="password" placeholder="Password (Minimum 8 Characters)" [(ngModel)]="password" #pass="ngModel" minlength="8" required><br>
+      <input class="form-control" type="password" name="password" placeholder="Enter Password Again" [(ngModel)]="newpassword" #newpass="ngModel" minlength="8" required><br>
+      <input type="checkbox" id="checkbox">
+      <label class="white-text" for="checkbox">&nbsp;&nbsp;I agree to Terms & Conditions</label><br><br>
+      <a (click)="signUpUser()" class="btn btn-primary button-shadow form-control" >Sign Up</a><br>
+      <br>
+    </form>
+  </div>
+<br>
+<p class="white-text text-center">Already Registered!  <a class="white-text" routerLink="/login">Click Here!</a></p>
+<div class="col-lg-3"></div>
+</div>
+</div>
